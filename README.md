@@ -1,5 +1,4 @@
 
-=======
 # My Initial Browser Page
 
 This is a simple custom start page for my web browser. It features a search bar, a welcome message, a random quote, and links to Google apps.
@@ -53,4 +52,3 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 ## License
 
 MIT License
->>>>>>> 97da8be (Initial commit)
