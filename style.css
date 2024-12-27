@@ -1,0 +1,100 @@
+body {
+  background: url("images/sfondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 10;
+  background-color: #f2f2f2;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(249, 248, 250);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Imposta una larghezza massima per schermi grandi */
+  width: 90%; /* Occupare il 90% della larghezza su schermi più piccoli */
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px; /* Aggiunto padding per la barra superiore */
+}
+
+.google-logo {
+  height: 30px; /* Altezza del logo */
+}
+
+.apps-icon img {
+  height: 20px;
+  cursor: pointer;
+  filter: invert(50%); /* Opzionale: per scurire leggermente l'icona */
+}
+
+/* Media query per schermi più piccoli (es. tablet e smartphone) */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px; /* Riduce il padding */
+  }
+
+  h1 {
+      font-size: 1.5em; /* Riduce la dimensione del titolo */
+  }
+
+  .google-logo {
+    height: 25px;
+  }
+  .apps-icon img {
+      height: 15px;
+  }
+  .top-bar {
+    padding: 5px; /* Ridotto padding per schermi più piccoli */
+  }
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px; /* Bordo arrotondato solo a sinistra */
+  width: 300px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  background-color: #4285f4; /* Colore blu di Google */
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Bordo arrotondato solo a destra */
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #357ae8;
+}
+
+/* Media query per schermi molto piccoli (es. smartphone in verticale) */
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.2em; /* Riduce ulteriormente la dimensione del titolo */
+  }
+  .google-logo {
+    height: 20px;
+  }
+  .apps-icon img {
+      height: 12px;
+  }
+}

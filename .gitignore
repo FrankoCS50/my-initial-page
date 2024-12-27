@@ -1,0 +1,19 @@
+# Common files and folders
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE specific files
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# System files
+*.bak
+*~
+
+#Image file for background if it is large
+images/sfondo.jpg
+images/puzzino.jpg
+images/apps-icon-png

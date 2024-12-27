@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Iniziale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <img src="images/puzzino.jpg" alt="Google Logo" class="google-logo">
+            <div class="apps-icon">
+                <a href="https://www.google.com/intl/it/about/products" target="_blank">
+                    <img src="images/apps-icon.png" alt="Apps Icon">
+                </a>
+            </div>
+        </div>
+        <h1>Benvenuto, <span id="nome-utente">utente</span>!</h1>
+        <p id="frase-casuale"></p>
+        <div class="search-box">
+          <form action="https://www.google.com/search" method="GET" target="_blank">
+              <input type="text" name="q" placeholder="Cerca su Google..." autocomplete="off">
+              <button type="submit">Cerca</button>
+          </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
