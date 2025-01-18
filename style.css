@@ -1,5 +1,24 @@
+:root {
+  --bg-color: rgb(249, 248, 250);
+  --text-color: black;
+  --container-bg-color: white;
+  --button-bg-color: #4285f4;
+  --button-hover-color: #357ae8;
+}
+
+body.dark-mode {
+  --bg-color: #181818;
+  --text-color: white;
+  --container-bg-color: #242424;
+  --button-bg-color: #4a90e2;
+  --button-hover-color: #3070c6;
+}
+
 body {
-  background: url("images/sfondo.jpg") no-repeat center center fixed;
+  background: var(--bg-color);
+  color: var(--text-color);
+  background-image: url("images/sfondo.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   font-family: sans-serif;
@@ -7,18 +26,17 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 10;
-  background-color: #f2f2f2;
+  margin: 0;
 }
 
 .container {
   text-align: center;
   padding: 20px;
-  background-color: rgb(249, 248, 250);
+  background-color: var(--container-bg-color);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 800px; /* Imposta una larghezza massima per schermi grandi */
-  width: 90%; /* Occupare il 90% della larghezza su schermi più piccoli */
+  max-width: 800px;
+  width: 90%;
 }
 
 .top-bar {
@@ -26,75 +44,153 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  padding: 10px; /* Aggiunto padding per la barra superiore */
+  padding: 10px;
 }
 
 .google-logo {
-  height: 30px; /* Altezza del logo */
+  height: 30px;
 }
 
 .apps-icon img {
   height: 20px;
   cursor: pointer;
-  filter: invert(50%); /* Opzionale: per scurire leggermente l'icona */
+  filter: invert(50%);
 }
 
-/* Media query per schermi più piccoli (es. tablet e smartphone) */
-@media (max-width: 768px) {
-  .container {
-      padding: 15px; /* Riduce il padding */
-  }
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
 
-  h1 {
-      font-size: 1.5em; /* Riduce la dimensione del titolo */
-  }
-
-  .google-logo {
-    height: 25px;
-  }
-  .apps-icon img {
-      height: 15px;
-  }
-  .top-bar {
-    padding: 5px; /* Ridotto padding per schermi più piccoli */
-  }
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 .search-box {
   display: flex;
   justify-content: center;
+  margin: 20px 0;
 }
 
 .search-box input[type="text"] {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px; /* Bordo arrotondato solo a sinistra */
+  border-radius: 5px 0 0 5px;
   width: 300px;
   outline: none;
 }
 
 .search-box button {
   padding: 10px 15px;
-  background-color: #4285f4; /* Colore blu di Google */
+  background-color: var(--button-bg-color);
   color: white;
   border: none;
-  border-radius: 0 5px 5px 0; /* Bordo arrotondato solo a destra */
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
 
 .search-box button:hover {
+  background-color: var(--button-hover-color);
+}
+
+button#share-quote-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#share-quote-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
   background-color: #357ae8;
 }
 
-/* Media query per schermi molto piccoli (es. smartphone in verticale) */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .google-logo {
+    height: 25px;
+  }
+
+  .apps-icon img {
+    height: 15px;
+  }
+
+  .top-bar {
+    padding: 5px;
+  }
+}
+
 @media (max-width: 480px) {
   h1 {
-      font-size: 1.2em; /* Riduce ulteriormente la dimensione del titolo */
+    font-size: 1.2em;
   }
+
   .google-logo {
     height: 20px;
   }
+
   .apps-icon img {
-      height: 12px;
+    height: 12px;
   }
 }
