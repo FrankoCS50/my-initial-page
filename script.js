@@ -46,6 +46,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Save User Name on "Enter" Key Press
+    nameInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') { // Check if the pressed key is "Enter"
+            const nome = nameInput.value.trim();
+            if (nome) {
+                localStorage.setItem('nomeUtente', nome);
+                mostraBenvenuto(nome);
+                closeModal();
+            }
+        }
+    });
+
+
     // Display Welcome Message
     function mostraBenvenuto(nome) {
         nomeUtenteSpan.textContent = nome;
